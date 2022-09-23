@@ -13,7 +13,6 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
   font-size: 1.7rem;
   font-family: "Montserrat", sans-serif;
 }
@@ -44,10 +43,19 @@ body {
     justify-content: space-around;
   }
 }
+@media (min-width: 900px) {
+  .row-landscape--alignStart {
+    align-items: flex-start !important;
+  }
+}
 
 .header {
   padding-top: 12rem;
   padding-bottom: 3rem;
+}
+.header--ninja {
+  padding-top: 15rem;
+  padding-bottom: 12rem;
 }
 
 .pT-2 {
@@ -119,6 +127,11 @@ body {
 .pX-8 {
   padding-right: 8rem;
   padding-left: 8rem;
+}
+
+.pX-10 {
+  padding-right: 10rem;
+  padding-left: 10rem;
 }
 
 .mL-auto {
@@ -322,6 +335,14 @@ body {
   color: #2b66be;
 }
 
+.c-green-main {
+  color: #28afb0;
+}
+
+.c-green-secondary {
+  color: #1985a1;
+}
+
 .bg-white {
   background-color: #fff;
 }
@@ -332,6 +353,38 @@ body {
 
 .bg-secondary {
   background-color: #ffb400;
+}
+
+.bg-green-secondary {
+  background-color: #1985a1;
+}
+
+.bg-gray-oscuro {
+  background: #4b6272;
+}
+
+.bg-green-main {
+  background: #097188;
+}
+
+.bg-greenWhite {
+  background: #f1fbfb;
+}
+
+.bg-multi-color {
+  background: linear-gradient(to right bottom, #a1abb8, #4b6272);
+}
+
+.bg-multi-colorDark {
+  background: linear-gradient(to right bottom, #1985a1, #28afb0);
+}
+
+.bg-arrowUp {
+  background: url(../../images/fondos/fondo1.jpg) no-repeat center center/cover;
+}
+
+.bg-fondo2 {
+  background: url(../../images/fondos/fondo2.jpg) center center/cover;
 }
 
 .text-decoration-none {
@@ -618,6 +671,17 @@ body {
   transform: var(--state-close);
 }
 
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+.navbar__logo {
+  width: 100%;
+  max-width: 20rem;
+}
+
 .btn {
   display: inline-block;
   text-decoration: none;
@@ -749,51 +813,6 @@ body {
   height: 20rem;
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  align-items: center;
-  position: fixed; /* Stay in place */
-  z-index: 10001; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #fefefe;
-  backdrop-filter: blur(2rem);
-  -webkit-backdrop-filter: blur(2rem);
-  padding: 2rem;
-}
-
-/* Modal Content */
-.modal-content {
-  position: relative;
-  padding: 8rem 2rem;
-  margin: auto;
-  width: 100%;
-  max-width: 700px;
-}
-.modal-content--big {
-  max-width: 1000px;
-}
-
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 1rem;
-  right: 2rem;
-  color: #aaaaaa;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .logo {
   width: 100%;
 }
@@ -811,6 +830,98 @@ body {
 }
 .homeMainContent__box--2 {
   background-image: url(../images/aprenya/Mesa\ de\ trabajo\ 7.jpg);
+}
+
+.ninjaHeader {
+  position: relative;
+  overflow-x: hidden;
+  z-index: 10;
+}
+.ninjaHeader__boxImg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.ninjaHeader__boxImg img {
+  width: 100%;
+  height: 40rem;
+}
+
+@media (min-width: 900px) {
+  .fasesSection__box .flexContainer__box:nth-child(even) {
+    margin-top: 10rem;
+  }
+}
+
+.academiaSection {
+  position: relative;
+  z-index: 100;
+}
+.academiaSection__img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 50rem;
+  z-index: -1;
+}
+.academiaSection__content {
+  max-width: 80rem;
+  width: 100%;
+}
+.academiaSection::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: rgba(241, 251, 251, 0.4);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+}
+@media (min-width: 900px) {
+  .academiaSection::after {
+    opacity: 0;
+  }
+}
+
+.practicaSection__box {
+  max-width: 350px;
+  -webkit-clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+@media (min-width: 900px) {
+  .practicaSection__box:first-child, .practicaSection__box:last-child {
+    margin-top: 15rem;
+  }
+  .practicaSection__box:first-child {
+    margin-right: 0;
+  }
+  .practicaSection__box:last-child {
+    margin-left: 0;
+  }
+}
+
+.sectionInfonografia__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 2rem;
+}
+@media (min-width: 600px) {
+  .sectionInfonografia__content {
+    display: none;
+  }
+}
+.sectionInfonografia__boxImg {
+  display: none;
+}
+@media (min-width: 400px) {
+  .sectionInfonografia__boxImg {
+    display: block;
+  }
 }
 
 .footer__containet.d-flex {

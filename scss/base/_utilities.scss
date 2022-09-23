@@ -28,6 +28,12 @@
   @include for-size('tablet-landscape-up') {
     @include row;
   }
+
+  &--alignStart {
+    @include for-size('tablet-landscape-up') {
+      align-items: flex-start !important;
+    }
+  }
 }
 
 // header
@@ -35,6 +41,12 @@
   padding-top: 12rem;
 
   padding-bottom: 3rem;
+
+  &--ninja {
+    padding-top: 15rem;
+
+    padding-bottom: 12rem;
+  }
 }
 
 //! Paddings
@@ -97,6 +109,10 @@
 
 .pX-8 {
   @include pX(8rem);
+}
+
+.pX-10 {
+  @include pX(10rem);
 }
 
 // ! Margin
@@ -305,6 +321,14 @@
   color: $main-color;
 }
 
+.c-green-main {
+  color: $c-green-main-2;
+}
+
+.c-green-secondary {
+  color: $c-green-secondary;
+}
+
 // ! bg
 .bg-white {
   background-color: $c-white;
@@ -318,6 +342,42 @@
   background-color: $secondary-color;
 }
 
+.bg-green-secondary {
+  background-color: $c-green-secondary;
+}
+
+.bg-gray-oscuro {
+  background: $c-gray-oscuro;
+}
+
+.bg-green-main {
+  background: $c-green-main;
+}
+
+.bg-greenWhite {
+  background: $c-greenWhite;
+}
+
+.bg-multi-color {
+  background: linear-gradient(to right bottom, $c-gray-light, $c-gray-oscuro);
+}
+
+.bg-multi-colorDark {
+  background: linear-gradient(
+    to right bottom,
+    $c-green-secondary,
+    $c-green-main-2
+  );
+}
+
+.bg-arrowUp {
+  background: url(../../images/fondos/fondo1.jpg) no-repeat center center /
+    cover;
+}
+
+.bg-fondo2 {
+  background: url(../../images/fondos/fondo2.jpg) center center / cover;
+}
 // ! Decoration
 .text-decoration-none {
   text-decoration: none;

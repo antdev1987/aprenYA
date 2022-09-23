@@ -3,12 +3,14 @@
 
 @use 'layout/gridSystem';
 @use 'layout/topNav';
+@use 'layout/navbar';
 
 @use 'components/btn';
 @use 'components/columns';
 @use 'components/flexContainer';
-@use 'components/modal';
+@use "components/section";
 
 @use 'pages/home';
+@use 'pages/ninja';
 
 @use 'layout/footer';
