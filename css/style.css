@@ -24,6 +24,12 @@ body {
   margin: 0 auto;
 }
 
+.container-900 {
+  max-width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 @media (min-width: 400px) {
   .row-normal-phone {
     flex-direction: row !important;
@@ -347,6 +353,18 @@ body {
   color: #4b6272;
 }
 
+.c-blue {
+  color: #0683dc;
+}
+
+.c-gray {
+  color: #666;
+}
+
+.c-purple-dark {
+  color: #7209b6;
+}
+
 .bg-white {
   background-color: #fff;
 }
@@ -375,6 +393,18 @@ body {
   background: #f1fbfb;
 }
 
+.bg-blue {
+  background-color: #0683dc;
+}
+
+.bg-blue-2 {
+  background-color: #00e2ef;
+}
+
+.bg-purple {
+  background-color: #9c63f9;
+}
+
 .bg-multi-color {
   background: linear-gradient(to right bottom, #a1abb8, #4b6272);
 }
@@ -389,6 +419,10 @@ body {
 
 .bg-fondo2 {
   background: url(../images/fondos/fondo2.jpg) center center/cover;
+}
+
+.bg-blue-light {
+  background-color: #d6f7f8;
 }
 
 .text-decoration-none {
@@ -815,6 +849,45 @@ body {
 }
 .flexContainer__img--conseguiremos {
   height: 20rem;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+.card::after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: -2rem;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 100%, 0% 50%);
+  height: 20rem;
+  width: 4rem;
+}
+.card--border-blue-2 {
+  border: 3px solid #00e2ef;
+}
+.card--border-blue-2::after {
+  background-color: #00e2ef;
+}
+.card--border-blue {
+  border: 3px solid #0683dc;
+}
+.card--border-blue::after {
+  background-color: #0683dc;
+}
+.card__img {
+  max-width: 15rem;
+  width: 100%;
+}
+.card .btn {
+  font-size: 1.5rem;
+  max-width: 25rem;
+}
+@media (min-width: 400px) {
+  .card .btn {
+    font-size: 2rem;
+  }
 }
 
 .logo {

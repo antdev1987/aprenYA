@@ -1,0 +1,53 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/mixins' as *;
+
+@mixin bgColor($color) {
+  &::after {
+    background-color: $color;
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: -1rem;
+    left: -2rem;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 100%, 0% 50%);
+
+    height: 20rem;
+    width: 4rem;
+  }
+
+  &--border-blue-2 {
+    border: 3px solid $color-principal-2;
+
+    @include bgColor($color-principal-2);
+  }
+
+  &--border-blue {
+    border: 3px solid $color-principal;
+
+    @include bgColor($color-principal);
+  }
+
+  &__img {
+    max-width: 15rem;
+
+    width: 100%;
+  }
+
+  .btn {
+    font-size: 1.5rem;
+
+    max-width: 25rem;
+
+    @include for-size("phone-only"){
+        font-size: 2rem;
+    }
+  }
+}
