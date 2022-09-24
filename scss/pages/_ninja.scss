@@ -68,7 +68,7 @@
     backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(1rem);
 
-    @include for-size("tablet-landscape-up"){
+    @include for-size('tablet-landscape-up') {
       opacity: 0;
     }
   }
@@ -108,6 +108,39 @@
 }
 
 .sectionInfonografia {
+  position: relative;
+
+  &__mainTitle {
+    font-size: 4rem;
+
+    @include for-size('tablet-portrait-up') {
+      font-size: 7rem;
+    }
+  }
+
+  &__shuriken {
+    position: absolute;
+    width: 40rem;
+
+    z-index: -1;
+
+    &--1 {
+      top: -5rem;
+      left: -2rem;
+      transform: rotateY(160deg);
+    }
+
+    &--2 {
+      right: 0;
+
+      opacity: 0;
+      
+      @include for-size('tablet-portrait-up') {
+        opacity: 1;
+      }
+    }
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -116,6 +149,16 @@
 
     @include for-size('tablet-portrait-up') {
       display: none;
+    }
+
+    &--pilares {
+      // justify-content: space-between;
+
+      & > div {
+        @include for-size('phone-only') {
+          min-height: 15rem;
+        }
+      }
     }
   }
 
