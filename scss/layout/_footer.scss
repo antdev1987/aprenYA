@@ -15,12 +15,14 @@
   }
 
   &__logo {
-    height: 13rem;
     width: 100%;
 
-    @include for-size('tablet-portrait-up') {
-      width: initial;
-      height: 7.6rem;
+    &--small {
+      max-width: 25rem;
+    }
+
+    &--md {
+      max-width: 35rem;
     }
   }
 

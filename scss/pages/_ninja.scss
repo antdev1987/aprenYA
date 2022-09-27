@@ -1,6 +1,8 @@
 @use '../abstracts/mixins' as *;
 @use '../abstracts/colors' as *;
 
+$new-medie: 800px;
+
 .ninjaHeader {
   position: relative;
 
@@ -17,7 +19,8 @@
 
     img {
       width: 100%;
-      height: 40rem;
+      max-width: 35rem;
+      // height: 40rem;
     }
   }
 }
@@ -68,7 +71,7 @@
     backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(1rem);
 
-    @include for-size('tablet-landscape-up') {
+    @include for-size("desktop-up") {
       opacity: 0;
     }
   }
@@ -113,8 +116,29 @@
   &__mainTitle {
     font-size: 4rem;
 
-    @include for-size('tablet-portrait-up') {
+    @include for-size($new-medie) {
       font-size: 7rem;
+    }
+  }
+
+  &__title {
+    &--pilares {
+      @include for-size($new-medie) {
+        font-size: 4rem;
+        width: 45rem;
+      }
+    }
+  }
+
+  &__text {
+    &--pilares {
+      @include for-size($new-medie) {
+        font-size: 2.3rem;
+        line-height: 1.5em;
+
+        width: 100%;
+        max-width: 50rem;
+      }
     }
   }
 
@@ -127,17 +151,27 @@
     &--1 {
       top: -5rem;
       left: -2rem;
-      transform: rotateY(160deg);
     }
 
     &--2 {
       right: 0;
 
       opacity: 0;
-      
-      @include for-size('tablet-portrait-up') {
+
+      @include for-size($new-medie) {
         opacity: 1;
       }
+    }
+  }
+
+  &__boxPilares {
+    max-width: 490px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    @include for-size($new-medie) {
+      max-width: 900px;
     }
   }
 
@@ -147,16 +181,65 @@
     justify-content: space-around;
     row-gap: 2rem;
 
-    @include for-size('tablet-portrait-up') {
+    position: relative;
+
+    @include for-size("tablet-portrait-up") {
       display: none;
     }
 
     &--pilares {
-      // justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      // align-items: center;
+      row-gap: 2rem;
+
+      @include for-size($new-medie) {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        padding-left: 2rem;
+
+        justify-content: space-between;
+      }
 
       & > div {
         @include for-size('phone-only') {
           min-height: 15rem;
+        }
+
+        @include for-size($new-medie) {
+          &:nth-child(even) {
+            align-self: center;
+          }
+
+          &:nth-child(1) {
+            max-height: 20rem;
+          }
+
+          &:nth-child(2) {
+            padding-left: 10rem;
+          }
+
+          &:nth-child(3) {
+            margin-top: -3rem;
+          }
+
+          &:nth-child(4) {
+            padding-left: 15rem;
+          }
+
+          &:nth-child(6) {
+            padding-left: 20rem;
+          }
+
+          &:nth-child(8) {
+            padding-left: 20rem;
+          }
+
+          &:nth-child(10) {
+            padding-left: 20rem;
+          }
         }
       }
     }
@@ -165,6 +248,13 @@
   &__boxImg {
     display: none;
     @include for-size('phone-only') {
+      display: block;
+    }
+  }
+
+  &__pilaresImg {
+    display: none;
+    @include for-size(450px) {
       display: block;
     }
   }

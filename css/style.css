@@ -414,11 +414,25 @@ body {
 }
 
 .bg-fondo1 {
-  background: url(../images/crececrypto/fondo1.jpg);
+  background: url(../images/crececrypto/fondo1.jpg) no-repeat left center/cover;
 }
 
 .bg-arrowUp {
-  background: url(../images/fondos/fondo1.jpg) no-repeat center center/cover;
+  position: relative;
+  z-index: 100;
+}
+.bg-arrowUp img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+@media (min-width: 1100px) {
+  .bg-arrowUp img {
+    height: unset;
+  }
 }
 
 .bg-fondo2 {
@@ -447,6 +461,10 @@ body {
 
 .text-justify {
   text-align: justify;
+}
+
+.relative {
+  position: relative;
 }
 
 .cursor-pointer {
@@ -926,7 +944,7 @@ body {
 }
 .ninjaHeader__boxImg img {
   width: 100%;
-  height: 40rem;
+  max-width: 35rem;
 }
 
 @media (min-width: 900px) {
@@ -962,7 +980,7 @@ body {
   backdrop-filter: blur(1rem);
   -webkit-backdrop-filter: blur(1rem);
 }
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
   .academiaSection::after {
     opacity: 0;
   }
@@ -991,9 +1009,23 @@ body {
 .sectionInfonografia__mainTitle {
   font-size: 4rem;
 }
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .sectionInfonografia__mainTitle {
     font-size: 7rem;
+  }
+}
+@media (min-width: 800px) {
+  .sectionInfonografia__title--pilares {
+    font-size: 4rem;
+    width: 45rem;
+  }
+}
+@media (min-width: 800px) {
+  .sectionInfonografia__text--pilares {
+    font-size: 2.3rem;
+    line-height: 1.5em;
+    width: 100%;
+    max-width: 50rem;
   }
 }
 .sectionInfonografia__shuriken {
@@ -1004,15 +1036,24 @@ body {
 .sectionInfonografia__shuriken--1 {
   top: -5rem;
   left: -2rem;
-  transform: rotateY(160deg);
 }
 .sectionInfonografia__shuriken--2 {
   right: 0;
   opacity: 0;
 }
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .sectionInfonografia__shuriken--2 {
     opacity: 1;
+  }
+}
+.sectionInfonografia__boxPilares {
+  max-width: 490px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 800px) {
+  .sectionInfonografia__boxPilares {
+    max-width: 900px;
   }
 }
 .sectionInfonografia__content {
@@ -1020,10 +1061,26 @@ body {
   flex-direction: column;
   justify-content: space-around;
   row-gap: 2rem;
+  position: relative;
 }
 @media (min-width: 600px) {
   .sectionInfonografia__content {
     display: none;
+  }
+}
+.sectionInfonografia__content--pilares {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 2rem;
+}
+@media (min-width: 800px) {
+  .sectionInfonografia__content--pilares {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding-left: 2rem;
+    justify-content: space-between;
   }
 }
 @media (min-width: 400px) {
@@ -1031,11 +1088,45 @@ body {
     min-height: 15rem;
   }
 }
+@media (min-width: 800px) {
+  .sectionInfonografia__content--pilares > div:nth-child(even) {
+    align-self: center;
+  }
+  .sectionInfonografia__content--pilares > div:nth-child(1) {
+    max-height: 20rem;
+  }
+  .sectionInfonografia__content--pilares > div:nth-child(2) {
+    padding-left: 10rem;
+  }
+  .sectionInfonografia__content--pilares > div:nth-child(3) {
+    margin-top: -3rem;
+  }
+  .sectionInfonografia__content--pilares > div:nth-child(4) {
+    padding-left: 15rem;
+  }
+  .sectionInfonografia__content--pilares > div:nth-child(6) {
+    padding-left: 20rem;
+  }
+  .sectionInfonografia__content--pilares > div:nth-child(8) {
+    padding-left: 20rem;
+  }
+  .sectionInfonografia__content--pilares > div:nth-child(10) {
+    padding-left: 20rem;
+  }
+}
 .sectionInfonografia__boxImg {
   display: none;
 }
 @media (min-width: 400px) {
   .sectionInfonografia__boxImg {
+    display: block;
+  }
+}
+.sectionInfonografia__pilaresImg {
+  display: none;
+}
+@media (min-width: 450px) {
+  .sectionInfonografia__pilaresImg {
     display: block;
   }
 }
@@ -1053,14 +1144,13 @@ body {
   flex: 1;
 }
 .footer__logo {
-  height: 13rem;
   width: 100%;
 }
-@media (min-width: 600px) {
-  .footer__logo {
-    width: initial;
-    height: 7.6rem;
-  }
+.footer__logo--small {
+  max-width: 25rem;
+}
+.footer__logo--md {
+  max-width: 35rem;
 }
 .footer__menu {
   gap: 2rem;
