@@ -52,6 +52,18 @@ $new-medie: 850px;
     }
   }
 
+  &__box {
+    width: 100%;
+
+    max-width: 70rem;
+  }
+
+  &__span {
+    @include for-size('tablet-landscape-up') {
+      display: block;
+    }
+  }
+
   &__img {
     position: absolute;
     right: 0;

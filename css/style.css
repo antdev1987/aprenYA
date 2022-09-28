@@ -991,6 +991,15 @@ body {
     font-size: 4rem;
   }
 }
+.academiaSection__box {
+  width: 100%;
+  max-width: 70rem;
+}
+@media (min-width: 900px) {
+  .academiaSection__span {
+    display: block;
+  }
+}
 .academiaSection__img {
   position: absolute;
   right: 0;
