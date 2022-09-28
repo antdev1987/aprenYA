@@ -102,6 +102,10 @@
   @include pY(15rem);
 }
 
+.pX-1 {
+  @include pX(1rem);
+}
+
 .pX-2 {
   @include pX(2rem);
 }

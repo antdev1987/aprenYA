@@ -115,6 +115,11 @@ body {
   padding-bottom: 15rem;
 }
 
+.pX-1 {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
 .pX-2 {
   padding-right: 2rem;
   padding-left: 2rem;
