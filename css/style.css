@@ -110,6 +110,11 @@ body {
   padding-bottom: 10rem;
 }
 
+.pY-15 {
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+}
+
 .pX-2 {
   padding-right: 2rem;
   padding-left: 2rem;
@@ -138,6 +143,10 @@ body {
 .pX-10 {
   padding-right: 10rem;
   padding-left: 10rem;
+}
+
+.pB-10 {
+  padding-bottom: 10rem;
 }
 
 .mL-auto {
@@ -418,21 +427,32 @@ body {
 }
 
 .bg-arrowUp {
+  background: url(../images/fondos/fondo3.png) no-repeat center center/cover;
   position: relative;
   z-index: 100;
 }
-.bg-arrowUp img {
+.bg-arrowUp__signo {
   position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  object-fit: cover;
+  --posicionY: -7.5rem;
+  --posicionX: 1rem;
 }
-@media (min-width: 1100px) {
-  .bg-arrowUp img {
-    height: unset;
+@media (min-width: 600px) {
+  .bg-arrowUp__signo {
+    --posicionX: 5rem;
   }
+}
+@media (min-width: 900px) {
+  .bg-arrowUp__signo {
+    --posicionX: 10rem;
+  }
+}
+.bg-arrowUp__signo--1 {
+  top: var(--posicionY);
+  left: var(--posicionX);
+}
+.bg-arrowUp__signo--2 {
+  bottom: var(--posicionY);
+  right: var(--posicionX);
 }
 
 .bg-fondo2 {
@@ -954,8 +974,17 @@ body {
 }
 
 .academiaSection {
+  overflow-y: hidden;
   position: relative;
   z-index: 100;
+}
+.academiaSection__title {
+  font-size: 3rem;
+}
+@media (min-width: 900px) {
+  .academiaSection__title {
+    font-size: 4rem;
+  }
 }
 .academiaSection__img {
   position: absolute;
@@ -985,6 +1014,9 @@ body {
     opacity: 0;
   }
 }
+.academiaSection--dark::after {
+  background-color: rgba(25, 133, 161, 0.4);
+}
 
 .practicaSection__box {
   max-width: 350px;
@@ -1009,21 +1041,24 @@ body {
 .sectionInfonografia__mainTitle {
   font-size: 4rem;
 }
-@media (min-width: 800px) {
+@media (min-width: 850px) {
   .sectionInfonografia__mainTitle {
     font-size: 7rem;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 850px) {
   .sectionInfonografia__title--pilares {
     font-size: 4rem;
     width: 45rem;
   }
 }
-@media (min-width: 800px) {
+.sectionInfonografia__text--pilares {
+  line-height: 1.5em;
+  font-weight: 100;
+}
+@media (min-width: 850px) {
   .sectionInfonografia__text--pilares {
-    font-size: 2.3rem;
-    line-height: 1.5em;
+    font-size: 2rem;
     width: 100%;
     max-width: 50rem;
   }
@@ -1041,7 +1076,7 @@ body {
   right: 0;
   opacity: 0;
 }
-@media (min-width: 800px) {
+@media (min-width: 850px) {
   .sectionInfonografia__shuriken--2 {
     opacity: 1;
   }
@@ -1051,7 +1086,7 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-@media (min-width: 800px) {
+@media (min-width: 850px) {
   .sectionInfonografia__boxPilares {
     max-width: 900px;
   }
@@ -1061,11 +1096,13 @@ body {
   flex-direction: column;
   justify-content: space-around;
   row-gap: 2rem;
-  position: relative;
 }
-@media (min-width: 600px) {
+@media (min-width: 850px) {
   .sectionInfonografia__content {
-    display: none;
+    justify-content: space-between;
+    position: absolute;
+    height: 100%;
+    width: 100%;
   }
 }
 .sectionInfonografia__content--pilares {
@@ -1074,7 +1111,7 @@ body {
   justify-content: space-around;
   row-gap: 2rem;
 }
-@media (min-width: 800px) {
+@media (min-width: 850px) {
   .sectionInfonografia__content--pilares {
     position: absolute;
     height: 100%;
@@ -1088,7 +1125,7 @@ body {
     min-height: 15rem;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 850px) {
   .sectionInfonografia__content--pilares > div:nth-child(even) {
     align-self: center;
   }
@@ -1112,6 +1149,41 @@ body {
   }
   .sectionInfonografia__content--pilares > div:nth-child(10) {
     padding-left: 20rem;
+  }
+}
+.sectionInfonografia__boxContent {
+  width: 100%;
+}
+@media (min-width: 850px) {
+  .sectionInfonografia__boxContent h2 {
+    font-size: 4rem;
+  }
+}
+.sectionInfonografia__boxContent p {
+  line-height: 1.5em;
+  font-weight: 100;
+}
+@media (min-width: 850px) {
+  .sectionInfonografia__boxContent p {
+    color: #0683dc;
+    font-size: 2rem;
+    width: 100%;
+  }
+}
+@media (min-width: 850px) {
+  .sectionInfonografia__boxContent {
+    max-width: 60rem;
+  }
+  .sectionInfonografia__boxContent:nth-child(even) {
+    align-self: center;
+    margin-left: 20rem;
+  }
+  .sectionInfonografia__boxContent:nth-child(1) {
+    padding-top: 5rem;
+    min-height: 25rem;
+  }
+  .sectionInfonografia__boxContent:nth-child(6) {
+    min-height: 20rem;
   }
 }
 .sectionInfonografia__boxImg {

@@ -1,7 +1,7 @@
 @use '../abstracts/mixins' as *;
 @use '../abstracts/colors' as *;
 
-$new-medie: 800px;
+$new-medie: 850px;
 
 .ninjaHeader {
   position: relative;
@@ -38,9 +38,19 @@ $new-medie: 800px;
 }
 
 .academiaSection {
+  overflow-y: hidden;
+
   position: relative;
 
   z-index: 100;
+
+  &__title {
+    font-size: 3rem;
+
+    @include for-size('tablet-landscape-up') {
+      font-size: 4rem;
+    }
+  }
 
   &__img {
     position: absolute;
@@ -71,8 +81,14 @@ $new-medie: 800px;
     backdrop-filter: blur(1rem);
     -webkit-backdrop-filter: blur(1rem);
 
-    @include for-size("desktop-up") {
+    @include for-size('desktop-up') {
       opacity: 0;
+    }
+  }
+
+  &--dark {
+    &::after {
+      background-color: rgba($c-green-secondary, 0.4);
     }
   }
 }
@@ -132,9 +148,11 @@ $new-medie: 800px;
 
   &__text {
     &--pilares {
+      line-height: 1.5em;
+      font-weight: 100;
+
       @include for-size($new-medie) {
-        font-size: 2.3rem;
-        line-height: 1.5em;
+        font-size: 2rem;
 
         width: 100%;
         max-width: 50rem;
@@ -181,10 +199,13 @@ $new-medie: 800px;
     justify-content: space-around;
     row-gap: 2rem;
 
-    position: relative;
+    @include for-size($new-medie) {
+      justify-content: space-between;
 
-    @include for-size("tablet-portrait-up") {
-      display: none;
+      position: absolute;
+
+      height: 100%;
+      width: 100%;
     }
 
     &--pilares {
@@ -241,6 +262,48 @@ $new-medie: 800px;
             padding-left: 20rem;
           }
         }
+      }
+    }
+  }
+
+  &__boxContent {
+    width: 100%;
+
+    h2 {
+      @include for-size($new-medie) {
+        font-size: 4rem;
+      }
+    }
+
+    p {
+      line-height: 1.5em;
+      font-weight: 100;
+
+      @include for-size($new-medie) {
+        color: $color-principal;
+
+        font-size: 2rem;
+
+        width: 100%;
+      }
+    }
+
+    @include for-size($new-medie) {
+      max-width: 60rem;
+
+      &:nth-child(even) {
+        align-self: center;
+
+        margin-left: 20rem;
+      }
+
+      &:nth-child(1) {
+        padding-top: 5rem;
+        min-height: 25rem;
+      }
+
+      &:nth-child(6) {
+        min-height: 20rem;
       }
     }
   }
