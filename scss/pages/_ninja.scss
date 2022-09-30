@@ -329,7 +329,7 @@ $new-medie: 850px;
 
   &__pilaresImg {
     display: none;
-    @include for-size(450px) {
+    @include for-size(490px) {
       display: block;
     }
   }
